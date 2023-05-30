@@ -6,7 +6,7 @@ class ListNode {
     this.next = next;
   }
 }
-// not affective algorithm since we iterate through copy list every cycle
+// not effective algorithm since we iterate through copy list every cycle
 function mergeTwoLists(list1: ListNode, list2: ListNode) {
   const dummyHead = new ListNode();
   let p1: null | ListNode = list1;
