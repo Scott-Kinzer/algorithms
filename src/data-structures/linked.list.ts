@@ -15,6 +15,12 @@ class LinkedList {
     this.head = head;
   }
 
+  prependNode(newNode: Node) {
+    const previousHead = this.head;
+    newNode.next = previousHead;
+    this.head = newNode;
+  }
+
   appendNode(newNode: Node) {
     let node = this.head;
     if (node == null) {
@@ -92,5 +98,7 @@ myList.insertAt(3, new Node('21'));
 myList.printList();
 
 myList.removeFrom(3);
+
+myList.prependNode(new Node('2'));
 
 myList.printList();
