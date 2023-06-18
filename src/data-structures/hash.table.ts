@@ -1,6 +1,6 @@
 class HashTable {
   size: number;
-  table: any[][];
+  table: string[][][];
 
   constructor(size: number) {
     this.table = Array(size);
@@ -36,7 +36,7 @@ class HashTable {
   get(key: string) {
     const index = this.hash(key);
 
-    return this.table[index].find((item) => item[0] === key)[1] || undefined;
+    return this.table[index].find((item) => item[0] === key)?.[1];
   }
 
   remove(key: string) {
