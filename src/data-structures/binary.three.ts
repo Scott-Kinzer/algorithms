@@ -1,9 +1,9 @@
 class Node {
   left: null | Node;
   right: null | Node;
-  value: string;
+  value: number;
 
-  constructor(value: string) {
+  constructor(value: number) {
     this.value = value;
     this.left = null;
     this.right = null;
@@ -20,4 +20,39 @@ class BinaryTree {
   isEmpty() {
     return this.root === null;
   }
+
+  insert(value: number) {
+    const node = new Node(value);
+
+    if (this.root === null) {
+      this.root = node;
+      return;
+    }
+
+    this.insertNode(this.root, node);
+  }
+
+  insertNode(root: Node, newNode: Node) {
+    if (newNode.value < root.value) {
+      if (root.left === null) {
+        root.left = newNode;
+        return;
+      }
+
+      this.insertNode(root.left, newNode);
+    } else {
+      if (root.right === null) {
+        root.right = newNode;
+        return;
+      }
+
+      this.insertNode(root.right, newNode);
+    }
+  }
 }
+
+const binary = new BinaryTree();
+
+binary.insert(5);
+binary.insert(2);
+binary.insert(7);
