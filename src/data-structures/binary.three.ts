@@ -63,13 +63,30 @@ class BinaryTree {
       return this.search(root.right, value);
     }
   }
+
+  deepthSearch() {
+    const stack = [this.root];
+
+    while (stack.length > 0) {
+      const currentNode = stack.pop();
+
+      console.log(currentNode?.value);
+
+      if (currentNode?.right) stack.push(currentNode.right);
+      if (currentNode?.left) stack.push(currentNode.left);
+    }
+  }
 }
 
 const binary = new BinaryTree();
 
 binary.insert(5);
 binary.insert(2);
+binary.insert(1);
+binary.insert(3);
 binary.insert(7);
+
+binary.deepthSearch();
 
 console.log(binary.search(binary.root, 5));
 console.log(binary.search(binary.root, 6));
