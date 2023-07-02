@@ -100,7 +100,7 @@ binary.insert(3);
 binary.insert(7);
 
 binary.deepthSearch();
-// binary.breathSearch();
+binary.breadthSearch();
 
 // console.log(binary.search(binary.root, 5));
 // console.log(binary.search(binary.root, 6));
